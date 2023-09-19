@@ -7,9 +7,8 @@
 
 int our_puts(const char *s)
 {
-	int r_val;
 
-	r_val = 0;
+	int r_val = 0;
 	int k = 0;
 
 	if (s)
@@ -18,7 +17,7 @@ int our_puts(const char *s)
 		{
 			our_putchar(s[k]);
 			r_val += 1;
-			s[k++];
+			k++;
 		}
 	}
 	our_putchar('\n');

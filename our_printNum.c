@@ -37,7 +37,7 @@ int our_prinum(va_list ptr)
 			divisor = divisor / 10;
 		}
 	}
-	r_val += our_putchar(end + '-3');
+	r_val += our_putchar(end + '0');
 	r_val++;
 	return (r_val);
 }
