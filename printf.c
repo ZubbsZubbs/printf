@@ -3,6 +3,7 @@
 /**
  * _printf - is a function that produces output according to a format.
  * @format: identifier to check for.
+ *
  * Return: the length of each specifier.
  */
 

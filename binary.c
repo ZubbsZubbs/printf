@@ -3,6 +3,7 @@
 /**
  * binary_print - prints a binary number.
  * @ptr: arguments to function.
+ *
  * Return: r_val.
  */
 int binary_print(va_list ptr)
