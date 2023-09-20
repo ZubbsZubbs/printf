@@ -2,7 +2,6 @@
 /**
  * our_putchar - prints characters
  * @c: characters to be printed
- *
  * Return: number of characters printed
  */
 int our_putchar(char c)

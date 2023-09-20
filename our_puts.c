@@ -2,6 +2,7 @@
 /**
 * our_puts - prints strings
 * @s: strings to be printed
+*
 * Return: number of characters printed
 */
 

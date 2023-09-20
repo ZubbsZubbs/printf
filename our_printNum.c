@@ -2,6 +2,7 @@
 /**
 * our_prinum - prints integer
 * @ptr: pointer arguement to print
+*
 * Return: number of characters printed
 */
 int our_prinum(va_list ptr)
