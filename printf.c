@@ -1,47 +1,58 @@
 #include "main.h"
-
 /**
- * _printf - is a function that produces output according to a format.
- * @format: identifier to check for.
- * Return: the length of each specifier.
- */
-
+* _printf - is a function that produces output according to a format.
+* @format: identifier to check for.
+* Return: the length of each specifier.
+*/
 int _printf(const char *format, ...)
 {
 unsigned int h = 0;
 int r_value = 0;
 va_list args;
 va_start(args, format);
-
+if (format == NULL || format[0] == '\0')
+return (-1);
 for (; format[h] != '\0'; h++)
 {
-if (format[h] != '%')
+switch (format[h])
 {
-our_putchar(format[h]);
-}
-else if (format[h + 1] == 'c')
+case '%':
+h++;
+switch (format[h])
 {
+case 'c':
 r_value += our_putchar(va_arg(args, int));
-h++;
-}
-else if (format[h + 1] == 's')
+break;
+case 's':
 {
-r_value += our_puts(va_arg(args, char *));
-h++;
+char *str = va_arg(args, char *);
+if (str == NULL)
+r_value += our_puts("(null)");
+else
+r_value += our_puts(str);
+break;
 }
-else if ((format[h + 1] == 'd') || (format[h + 1] == 'i'))
-{
+case 'd':
+case 'i':
 r_value += our_prinum(args);
-h++;
-}
-else if (format[h + 1] == 'b')
-{
+break;
+case 'b':
 r_value += binary_print(args);
-h++;
+break;
+case '%':
+r_value += our_putchar('%');
+break;
+default:
+r_value += our_putchar('%');
+break;
 }
-r_value += 1;
-
+break;
+default:
+r_value += our_putchar(format[h]);
+break;
+}
 }
 va_end(args);
-return (r_value - 2);
+return (r_value);
 }
+
