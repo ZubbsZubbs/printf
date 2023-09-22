@@ -19,6 +19,7 @@ int our_prinum(va_list ptr)
 		our_putchar('-');
 		temp = -temp;
 		num = -num;
+		last = -last;
 		r_val++;
 	}
 	if (temp > 0)
