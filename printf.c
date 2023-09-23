@@ -39,6 +39,18 @@ break;
 case 'b':
 r_value += binary_print(args);
 break;
+case 'x':
+r_value += our_prihex(args);
+break;
+case 'X':
+r_value += our_priHEX(args);
+break;
+case 'f':
+r_value += our_prifloat(args);
+break;
+case 'u':
+r_value += our_priunsignedint(args);
+break;
 case '%':
 r_value += our_putchar('%');
 break;
